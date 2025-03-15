@@ -60,8 +60,8 @@ robot_db_tests/
 
 ## Installation
 1. **Clone the Repository**  
-   git clone https://github.com/VikaAvd/robot_db_tests.git
-   cd robot_db_tests
+- git clone https://github.com/VikaAvd/robot_db_tests.git
+- cd robot_db_tests
 
 2. **Install Python Dependencies**
 - Ensure you have Python installed, then run:
@@ -71,12 +71,12 @@ robot_db_tests/
 1. **Database Connection**
 - The file resources/db_connection.robot contains the keyword for connecting to the SQL Server database. 
 - It is configured as follows:
-      Database Name: TRN
-      Username: robot
-      Password: Vika_password123
-      Server: EPUALVIW059D\SQLEXPRESS01
-      Port: (Use the actual port your SQL Server instance listens on, e.g., 52298)
-      If your SQL Server uses dynamic ports, update the port number in db_connection.robot accordingly.
+      - Database Name: TRN
+      - Username: robot
+      - Password: Vika_password123
+      - Server: EPUALVIW059D\SQLEXPRESS01
+      - Port: (Use the actual port your SQL Server instance listens on, e.g., 52298)
+      - If your SQL Server uses dynamic ports, update the port number in db_connection.robot accordingly.
 
 2. **SQL Server Requirements**
 - Ensure TCP/IP is enabled for your SQL Server instance.
@@ -85,11 +85,9 @@ robot_db_tests/
 
 ## Running the Tests
 - Run all tests from the project root using the following command (ensure you’re using the correct Python environment):
-   python -m robot --outputdir output tests
+   - python -m robot --outputdir output tests
 
-- Or, for a specific test file:
-   python -m robot --outputdir output tests/db_check.robot
-Note: If you have spaces in your file paths, enclose the paths in quotes.
+- Note: If you have spaces in your file paths, enclose the paths in quotes.
 
 ## Test Reports
 After execution, the following files will be generated in the output/ folder:
