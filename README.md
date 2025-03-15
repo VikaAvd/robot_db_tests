@@ -19,7 +19,6 @@ This project uses Robot Framework along with the DatabaseLibrary to connect to a
 - `[TRN].[hr].[jobs]`
 - `[TRN].[hr].[locations]`
 
-
 ## Test Cases Description
 The project implements six test cases (two per table):
 
@@ -71,12 +70,12 @@ robot_db_tests/
 1. **Database Connection**
 - The file resources/db_connection.robot contains the keyword for connecting to the SQL Server database. 
 - It is configured as follows:
-      - Database Name: TRN
-      - Username: robot
-      - Password: Vika_password123
-      - Server: EPUALVIW059D\SQLEXPRESS01
-      - Port: (Use the actual port your SQL Server instance listens on, e.g., 52298)
-      - If your SQL Server uses dynamic ports, update the port number in db_connection.robot accordingly.
+   - Database Name: TRN
+   - Username: robot
+   - Password: Vika_password123
+   - Server: EPUALVIW059D\SQLEXPRESS01
+   - Port: (Use the actual port your SQL Server instance listens on, e.g., 52298)
+   - If your SQL Server uses dynamic ports, update the port number in db_connection.robot accordingly.
 
 2. **SQL Server Requirements**
 - Ensure TCP/IP is enabled for your SQL Server instance.
