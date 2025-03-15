@@ -1,0 +1,4 @@
+# Robot Framework output folder (generated logs, reports, etc.)
+output/output.xml
+test.py
+db_check.robot
