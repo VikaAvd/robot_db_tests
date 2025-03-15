@@ -97,12 +97,12 @@ After execution, the following files will be generated in the output/ folder:
 
 ## Troubleshooting
 Connection Issues:
-- If you receive errors such as “Data source name not found” or “actively refused,” verify that:
-   - The correct ODBC driver is installed and visible to Python.
-   - TCP/IP is enabled on your SQL Server instance.
-   - SQL Server Browser is running.
-   - The port number in db_connection.robot is correct 
+If you receive errors such as “Data source name not found” or “actively refused,” verify that:
+- The correct ODBC driver is installed and visible to Python.
+- TCP/IP is enabled on your SQL Server instance.
+- SQL Server Browser is running.
+- The port number in db_connection.robot is correct 
       (you can check this in SQL Server Configuration Manager or with a T-SQL query).
 
-- Test Failures:
-   - Review output/log.html for detailed error messages to identify which validation failed.
+Test Failures:
+- Review output/log.html for detailed error messages to identify which validation failed.
