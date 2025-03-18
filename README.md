@@ -74,6 +74,7 @@ Ensure you have Python installed, then run:
    - Username: robot
    - Password: Vika_password123
    - Server: EPUALVIW059D\SQLEXPRESS01
+   - ODBC Driver: The connection string uses 'ODBC Driver 17 for SQL Server' and includes additional parameters:`Encrypt=no;TrustServerCertificate=yes;` for the 18 version
    - Port: (Use the actual port your SQL Server instance listens on, e.g., 52298)
    - If your SQL Server uses dynamic ports, update the port number in db_connection.robot accordingly.
 
