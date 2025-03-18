@@ -80,8 +80,7 @@ Ensure you have Python installed, then run:
 2. **SQL Server User Setup:**  
   To create the `robot` login and give it the necessary permissions on the `TRN` database, you can run the following T-SQL commands in SQL Server Management Studio (SSMS) as an administrator:
 
-  ```sql
-  --Creating a user (you may use your own login and password - just update the corresponding settings in db_connection.robot).
+   --Creating a user (you may use your own login and password - just update the corresponding settings in db_connection.robot).
    USE [TRN];
    GO
    -- Create a login at the server level (if it doesn't already exist)
