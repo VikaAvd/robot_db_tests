@@ -1,4 +1,4 @@
-# Robot Framework output folder (generated logs, reports, etc.)
+# Robot Framework output and intermediate files
 output/output.xml
 test.py
 db_check.robot

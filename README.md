@@ -41,8 +41,8 @@ The project implements six test cases (two per table):
 - **Robot Framework DatabaseLibrary**
 - **pyodbc**
 - A running **Microsoft SQL Server** instance with the `TRN` database and `hr` schema.
-- The correct **ODBC Driver 17 for SQL Server** installed (64-bit recommended).
-- A database login (e.g., `robot`) with appropriate permissions on the `TRN` database.
+- The correct **ODBC Driver 17 for SQL Server** or **ODBC Driver 18 for SQL Server** installed (64-bit recommended).
+- A database login (e.g., `robot`) with appropriate permissions on the `TRN` database (more details in the 'SQL Server User Setup' section below)
 
 ## Project Structure
 robot_db_tests/
@@ -62,9 +62,9 @@ robot_db_tests/
 - git clone https://github.com/VikaAvd/robot_db_tests.git
 - cd robot_db_tests
 
-2. **Install Python Dependencies**
-- Ensure you have Python installed, then run:
-- pip install robotframework robotframework-databaselibrary pyodbc
+2. **Install Python Dependencies:** 
+Ensure you have Python installed, then run:
+- pip install -r requirements.txt
 
 ## Configuration
 1. **Database Connection**
@@ -77,10 +77,29 @@ robot_db_tests/
    - Port: (Use the actual port your SQL Server instance listens on, e.g., 52298)
    - If your SQL Server uses dynamic ports, update the port number in db_connection.robot accordingly.
 
-2. **SQL Server Requirements**
+2. **SQL Server User Setup:**  
+  To create the `robot` login and give it the necessary permissions on the `TRN` database, you can run the following T-SQL commands in SQL Server Management Studio (SSMS) as an administrator:
+
+  ```sql
+  --Creating a user (you may use your own login and password - just update the corresponding settings in db_connection.robot).
+   USE [TRN];
+   GO
+   -- Create a login at the server level (if it doesn't already exist)
+   CREATE LOGIN robot WITH PASSWORD = 'Vika_password123';
+   GO
+
+   -- Create a user in TRN database mapped to that login
+   CREATE USER robot FOR LOGIN robot WITH DEFAULT_SCHEMA = hr;
+   GO
+
+   -- Grant the necessary permissions (read, etc.)
+   GRANT SELECT ON SCHEMA::hr TO robot;
+   GO
+
+3. **SQL Server Requirements**
 - Ensure TCP/IP is enabled for your SQL Server instance.
 - The SQL Server Browser service should be running.
-- The robot login must have proper permissions (e.g., db_datareader) on the TRN database.
+- The robot login must have proper permissions on the TRN database (connect as an admin, navigate to TRN > Security > Users, right-click "robot", open Properties, and confirm in the Membership tab that db_datareader is checked).
 
 ## Running the Tests
 - Run all tests from the project root using the following command (ensure you’re using the correct Python environment):
